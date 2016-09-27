@@ -1,3 +1,31 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo|fontawesome|zocial);
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+  text-decoration-color: black;
+  /*text-shadow: 1px 3px 3px #aaa;*/
+  font-size: 16px;
+  width: 30vw;
+}
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  text-decoration-color: black;
+  font-size: 16px;
+  width: 30vw;
+}
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+  text-decoration-color: black;
+  font-size: 16px;
+  width: 30vw;
+}
+
+
 body,
 div,
 ul,
