@@ -54,7 +54,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #70cc3f;
   line-height: 48px;
   display: inline;
 }
@@ -72,6 +72,7 @@ h3 {
   font-size: 20px;
   color: #000;
   line-height: 22px;
+  margin-top: 10px;
 }
 
 h4 {
@@ -82,7 +83,7 @@ h4 {
 }
 
 h2,
-h3,
+/*h3,*/
 h4,
 h5 {
   padding:10px 5%;
@@ -128,16 +129,16 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #70cc3f;
   display: none;
 }
 
-.orange {
-  background-color: #f5ae23;
+.green {
+  background-color: #70cc3f;
 }
 
-.orange-text {
-  color: #f5ae23;
+.green-text {
+  color: #70cc3f;
 }
 
 .white-text {
@@ -188,7 +189,11 @@ ul {
   float: left;
   padding: 10px;
   width: 200px;
-  display: none;
+}
+
+.projectpic {
+  padding: 10px;
+  width: 400px;
 }
 
 img {
@@ -197,10 +202,26 @@ img {
 
 span {
   padding: 5px;
+  color: #999;
 }
 
 #lets-connect {
   text-align: center;
+}
+
+button {
+    background-color: #70cc3f;
+    color: gray;
+    border: none;
+    padding: 15px 50px;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 3px 3px 3px #aaa;
+    cursor: pointer;
+}
+
+.btn {
+    text-align: center;
 }
 
 /* Media queries to handle various device widths */
@@ -215,6 +236,10 @@ span {
   .biopic {
     width: 175px;
   }
+
+  .projectpic {
+    width: 200px;
+  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -222,6 +247,9 @@ span {
     margin-top: 10%;
   }
   .biopic {
+    width: 150px;
+  }
+  .projectpic {
     width: 150px;
   }
   .welcome-message {
@@ -241,9 +269,22 @@ span {
   padding-bottom: 5%;
 }
 
+@media only screen and (max-width: 450px) {
+    .biopic {
+        width: 90%;
+    }
+    .projectpic {
+        width: 100%;
+    }
+}
+
 @media only screen and (min-width: 750px) {
   #skills-h3,
   .biopic {
+    display: block;
+  }
+
+  .projectpic {
     display: block;
   }
 }

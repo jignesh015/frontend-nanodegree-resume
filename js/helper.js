@@ -15,13 +15,13 @@ replace the %data% placeholder text you see in them.
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text fontawesome-phone-sign"></span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text zocial-email"></span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text zocial-twitter"></span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text zocial-github"></span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text entypo-location"></span><span class="white-text">%data%</span></li>';
+var HTMLcontactGeneric = '<li class="flex-item"><span class="green-text">%contact%</span><span class="white-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item"><span class="green-text fontawesome-phone-sign"></span><span class="white-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><span class="green-text zocial-email"></span><span class="white-text">%data%</span></li>';
+var HTMLtwitter = '<li class="flex-item"><span class="green-text zocial-twitter"></span><span class="white-text">%data%</span></li>';
+var HTMLgithub = '<li class="flex-item"><span class="green-text zocial-github"></span><span class="white-text">%data%</span></li>';
+var HTMLblog = '<li class="flex-item"><span class="green-text">blog</span><span class="white-text">%data%</span></li>';
+var HTMLlocation = '<li class="flex-item"><span class="green-text entypo-location"></span><span class="white-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
@@ -40,7 +40,7 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-//var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectImage = '<img src="%data%" class="projectpic">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
@@ -55,7 +55,7 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-var internationalizeButton = '<button>Internationalize</button>';
+var internationalizeButton = '<div class="btn"><button>Internationalize</button><div>';
 var googleMap = '<div id="map"></div>';
 
 
@@ -87,6 +87,7 @@ function logClicks(x,y) {
 
 $(document).click(function(loc) {
   // your code goes here!
+  logClicks(loc.pageX,loc.pageY);
 });
 
 
@@ -107,7 +108,7 @@ function initializeMap() {
   var locations;
 
   var mapOptions = {
-    disableDefaultUI: false
+    disableDefaultUI: true
   };
 
   /*
@@ -133,8 +134,8 @@ function initializeMap() {
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
-    education.colleges.forEach(function(colleges){
-      locations.push(education.colleges[colleges].city);
+    education.schools.forEach(function(school){
+      locations.push(school.location);
     });
 
     // iterates through work locations and appends each location to
@@ -142,7 +143,7 @@ function initializeMap() {
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
     work.jobs.forEach(function(job){
-      locations.push(work.jobs[job].city);
+      locations.push(job.location);
     });
 
     return locations;
@@ -214,7 +215,7 @@ function initializeMap() {
       locations.forEach(function(place){
       // the search request object
       var request = {
-        query: locations[place]
+        query: place
       };
 
       // Actually searches the Google Maps API for location data and runs the callback
