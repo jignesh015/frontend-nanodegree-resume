@@ -36,20 +36,20 @@ var education = {
         "degree": "BE",
         "majors": ["Information Technology"],
         "dates": "2012-2016",
-        "url": "www.spit.ac.in"
+        "url": "http://www.spit.ac.in"
     }, {
         "name": "T.P.Bhatia College of Science",
         "location": "Mumbai",
         "degree": "HSC",
         "majors": ["Science"],
         "dates": "2010-2012",
-        "url": "www.kes.ac.in"
+        "url": "http://www.kes.ac.in"
     }],
     "onlineCourses": [{
         "title": "Front End Developer",
         "school": "Udacity",
         "dates": "2016",
-        "url": "www.udacity.com"
+        "url": "http://www.udacity.com"
     }]
 };
 
